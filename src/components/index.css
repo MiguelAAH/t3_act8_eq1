@@ -1,0 +1,14 @@
+html,
+body,
+#root,
+.App {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  background-color: #0b224d;
+  /* Evita parpadeos o espacios de otro color */
+  overflow: hidden;
+}

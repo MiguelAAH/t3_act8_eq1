@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.login-left {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .login-left {
+        display: block;
+    }
+}
+
+.login-right {
+    flex: 1;
+    background-color: #0b224d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-form-content {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.tewiin-logo {
+    height: 50px;
+    object-fit: contain;
+}
+
+.login-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #d9d9d9;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #777777;
+}
+
+.form-group input:focus {
+    border-color: #f27443;
+}
+
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-password {
+    color: #718096;
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+.forgot-password:hover {
+    color: #a0aec0;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333333;
+    font-size: 0.85rem;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #f27443;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #e06130;
+}
+
+.register-text {
+    color: #718096;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 0.9rem;
+}
+
+.register-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    color: #f27443;
+}
+
+/* Estilo para los mensajes de error en el formulario */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Pantalla de bienvenida tras un login exitoso */
+.welcome-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0b224d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #f27443;
+    object-fit: cover;
+    background-color: #f7f7f7;
+}
+
+.welcome-card h2 {
+    color: #0b224d;
+    font-size: 1.5rem;
+}
+
+.user-email,
+.user-gender {
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+.token-badge {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    background-color: #f27443;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #e06130;
+}
