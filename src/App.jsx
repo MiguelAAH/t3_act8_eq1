@@ -1,8 +1,20 @@
+import Sidebar from "./components/sidebar";
+import Navbar from "./components/navbar";
+import ContenidoInterfaz from "./components/contenidoInterfaz";
+
 function App() {
   return (
-    <div>
-      <h1>Actividad 8 🚀</h1>
-    </div>
+    <>
+      <div className="side">
+        <Sidebar />
+      </div>
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="contenido">
+        <ContenidoInterfaz />
+      </div>
+    </>
   );
 }
 

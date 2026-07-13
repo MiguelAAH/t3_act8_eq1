@@ -1,0 +1,188 @@
+/*VISUALES PARA EL SIDEBAR*/
+
+.sidebar {
+    position: fixed;
+    background: linear-gradient(180deg, #0B2351 0%, #0B2351 100%);
+    width: 332px;
+    height: 100%;
+    left: 0;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    padding-top: 20px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+    z-index: 998;
+}
+
+.sidebar .brand-logo {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+    align-items: center;
+    height: 140px;
+    /* Un poco más de altura para que respire más */
+    width: 100%;
+}
+
+.sidebar .brand-logo .logo-empresa {
+    width: 200px;
+    /* Tamaño ideal del logo */
+    height: auto;
+    object-fit: contain;
+    margin-right: 0;
+    /* Quita el margen derecho por defecto */
+}
+
+.sidebar ul a,
+.sidebar ul .menu-btn {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: calc(100% - 30px);
+    margin: 10px auto;
+    color: #ffffff;
+    padding-left: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    transition: all .3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.sidebar ul a:hover,
+.sidebar ul .menu-btn:hover {
+    background: #e09067;
+    color: #0d1e3d !important;
+    border-left: none;
+}
+
+.sidebar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+/* Cuando se pasa el mouse, el icono pasa a ser oscuro */
+.sidebar ul a:hover img,
+.sidebar ul .menu-btn:hover img,
+.sidebar ul a.active img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(2206%) hue-rotate(201deg) brightness(92%) contrast(97%);
+    transform: scale(1.05);
+}
+
+#check {
+    display: none;
+}
+
+label #bar,
+label #time {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #bar {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    left: 17px;
+    padding: 8px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label #bar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+label #time {
+    z-index: 11;
+    color: white;
+    padding: 4px 8px;
+    left: 190px;
+    top: 20px;
+    transition: all .5s;
+    font-size: 25px;
+}
+
+#check:checked~.sidebar {
+    width: 260px;
+}
+
+#check:checked~.sidebar h2 {
+    opacity: 1;
+}
+
+#check:checked~.sidebar ul a,
+#check:checked~.sidebar ul .menu-btn {
+    padding-left: 20px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+#check:checked~label #bar {
+    left: 200px;
+}
+
+.bg {
+    height: 100vh;
+    background-image: url();
+}
+
+
+.toggle-submenu {
+    display: none;
+
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    background: #1e293b;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.submenu a {
+    font-size: 15px;
+    line-height: 50px;
+    padding-left: 55px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#check:checked~.sidebar .submenu a {
+    padding-left: 70px;
+}
+
+
+#check:checked~.sidebar .toggle-submenu:checked~.submenu {
+    max-height: 200px;
+}
+
+
+.flecha {
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 27px;
+    transition: transform 0.4s ease, opacity 0.3s;
+    opacity: 0;
+    filter: invert(1);
+}
+
+#check:checked~.sidebar .flecha {
+    opacity: 0.7;
+}
+
+.toggle-submenu:checked~.menu-btn .flecha {
+    transform: rotate(180deg);
+}
