@@ -3,22 +3,192 @@
     width: 100%;
     min-height: calc(100vh - 70px);
     box-sizing: border-box;
-    padding: 20px 20px 20px 40px;
+    padding: 15px 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panelEncabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 35px;
+}
+
+.panelFiltros {
+    width: 100%;
+    height: 65px;
+    padding: 20px 35px 20px 0px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 .panelPrincipal h1 {
-    font-size: 50px;
+    font-size: 32px;
     font-family: 'Segoe UI';
     text-align: left;
     font-weight: bolder;
     color: #0B2351;
-    line-height: 120px;
+    margin: 0;
 }
 
 .panelPrincipal .btnAgregar {
-    width: calc(100% - 30px);
-    height: 50px;
+    width: auto;
+    padding: 0 20px;
+    border-radius: 10px;
+    transition: all .3s ease;
+    height: 40px;
     display: flex;
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #F16C3D;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.panelPrincipal .btnAgregar:hover {
+    background-color: #f27443;
+}
+
+.panelFiltros .inputFiltro {
+    flex: 1;
+    max-width: 300px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: normal;
+    outline: none;
+}
+
+.panelFiltros .btnFiltrar {
+    width: 90px;
+    height: 40px;
+    padding: 0;
+    border-radius: 8px;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #0B2351;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.panelTabla {
+    background-color: white;
+    margin-top: 7px;
+    margin-right: 35px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tablaContainer {
+    overflow-y: scroll;
+    flex-grow: 1;
+    max-height: calc(100vh - 280px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #f48a60;
+    color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+th,
+td {
+    padding: 6px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+}
+
+th {
+    font-weight: bolder;
+    text-align: center;
+}
+
+td {
+    color: #333;
+    text-align: center;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+.acciones-btn {
+    background-color: #F16C3D;
+    border: none;
+    padding: 5px 7px;
+    margin: 0 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    transition: background 0.2s;
+}
+
+.acciones-btn:hover {
+    background-color: #f2875b;
+}
+
+.panelPaginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 35px 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.paginacion-paginas {
+    display: flex;
+    gap: 8px;
+}
+
+.pag-btn {
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+}
+
+.pag-btn.active {
+    background-color: #f48a60;
+}
+
+.selectPaginacion {
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
 }

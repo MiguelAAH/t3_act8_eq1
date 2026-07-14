@@ -30,8 +30,8 @@ a {
 
 /* Espacio para que el contenido no quede oculto bajo el Sidebar y Navbar fijos */
 .contenido {
-  margin-left: 332px; /* Ancho del sidebar expandido */
-  padding-top: 70px; /* Alto del navbar */
+  margin-left: 230px; /* Ancho del sidebar expandido */
+  padding-top: 60px; /* Alto del navbar */
   min-height: 100vh;
 }
 

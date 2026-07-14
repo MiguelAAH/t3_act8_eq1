@@ -3,7 +3,7 @@
 .sidebar {
     position: fixed;
     background: linear-gradient(180deg, #0B2351 0%, #0B2351 100%);
-    width: 332px;
+    width: 230px;
     height: 100%;
     left: 0;
     transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -16,16 +16,13 @@
 .sidebar .brand-logo {
     display: flex;
     justify-content: center;
-    /* Centra horizontalmente el contenido */
     align-items: center;
-    height: 140px;
-    /* Un poco más de altura para que respire más */
+    height: 100px;
     width: 100%;
 }
 
 .sidebar .brand-logo .logo-empresa {
-    width: 200px;
-    /* Tamaño ideal del logo */
+    width: 140px;
     height: auto;
     object-fit: contain;
     margin-right: 0;
@@ -36,13 +33,13 @@
 .sidebar ul .menu-btn {
     display: flex;
     align-items: center;
-    height: 50px;
-    width: calc(100% - 30px);
-    margin: 10px auto;
+    height: 40px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
     color: #ffffff;
-    padding-left: 20px;
-    font-size: 20px;
-    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 14px;
+    border-radius: 20px;
     transition: all .3s ease;
     white-space: nowrap;
     cursor: pointer;
@@ -59,9 +56,9 @@
 }
 
 .sidebar img {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
     vertical-align: middle;
     transition: all 0.3s ease;
 }
@@ -85,11 +82,11 @@ label #time {
 }
 
 label #bar {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
     top: 15px;
-    left: 17px;
-    padding: 8px;
+    left: 12px;
+    padding: 6px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     background: rgba(255, 255, 255, 0.9);
@@ -113,7 +110,7 @@ label #time {
 }
 
 #check:checked~.sidebar {
-    width: 260px;
+    width: 180px;
 }
 
 #check:checked~.sidebar h2 {
@@ -129,7 +126,7 @@ label #time {
 
 
 #check:checked~label #bar {
-    left: 200px;
+    left: 140px;
 }
 
 .bg {

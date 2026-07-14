@@ -18,6 +18,15 @@ dist-ssr
 .idea
 .DS_Store
 *.suo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Testing and formatting
+coverage
+.eslintcache
 *.ntvs*
 *.njsproj
 *.sln

@@ -6,7 +6,7 @@ import Login from './components/Login';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
 
   return (
     <div className="App">
