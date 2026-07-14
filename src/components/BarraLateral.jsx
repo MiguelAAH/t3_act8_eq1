@@ -5,7 +5,7 @@ import casaIcon from "../assets/img/casa.png";
 import bolsaIcon from "../assets/img/bolsa.png";
 import ajustesIcon from "../assets/img/ajustes.png";
 
-function Sidebar({ currentView, setCurrentView }) {
+function BarraLateral({ currentView, setCurrentView }) {
     return (
         <div className="sidebar">
             <div className="sidebar-logo">
@@ -41,4 +41,4 @@ function Sidebar({ currentView, setCurrentView }) {
     );
 }
 
-export default Sidebar;
+export default BarraLateral;

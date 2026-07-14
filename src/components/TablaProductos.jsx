@@ -1,6 +1,6 @@
 import React from "react";
 
-function TablaProductos({ currentRecords, lapizIcon, basuraIcon, handleOpenEditModal, handleDeleteProduct }) {
+function TablaProductos({ registrosActuales, lapizIcon, basuraIcon, abrirModalEditar, manejarEliminarProducto }) {
     return (
         <div className="panelTabla">
             <div className="tablaContainer">
@@ -15,18 +15,18 @@ function TablaProductos({ currentRecords, lapizIcon, basuraIcon, handleOpenEditM
                         </tr>
                     </thead>
                     <tbody>
-                        {currentRecords.length > 0 ? (
-                            currentRecords.map((prod) => (
+                        {registrosActuales.length > 0 ? (
+                            registrosActuales.map((prod) => (
                                 <tr key={prod.id}>
                                     <td>{prod.title}</td>
                                     <td><b>{prod.category}</b></td>
                                     <td>${prod.price.toFixed(2)}</td>
                                     <td>⭐ {prod.rating?.rate || "N/A"} ({prod.rating?.count || 0})</td>
                                     <td>
-                                        <button className="acciones-btn" onClick={() => handleOpenEditModal(prod)}>
+                                        <button className="acciones-btn" onClick={() => abrirModalEditar(prod)}>
                                             <img src={lapizIcon} alt="Editar" style={{ width: '16px', height: '16px', display: 'block' }} />
                                         </button>
-                                        <button className="acciones-btn" onClick={() => handleDeleteProduct(prod.id, prod.title)}>
+                                        <button className="acciones-btn" onClick={() => manejarEliminarProducto(prod.id, prod.title)}>
                                             <img src={basuraIcon} alt="Borrar" style={{ width: '16px', height: '16px', display: 'block' }} />
                                         </button>
                                     </td>

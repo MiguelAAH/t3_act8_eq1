@@ -1,8 +1,7 @@
 import React from "react";
-import "./inicioVisuales.css"; // Crearemos sus estilos abajo
+import "./inicioVisuales.css";
 
 function Inicio({ user }) {
-    // Obtenemos el nombre del usuario logueado en la API o usamos el tuyo por defecto
     const nombreUsuario = user && user.firstName ? `${user.firstName} ${user.lastName}` : "Miguel Alonso";
 
     return (

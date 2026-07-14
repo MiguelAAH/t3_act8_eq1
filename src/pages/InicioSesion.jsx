@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './Login.css';
+import { login } from '../services/servicioAutenticacion';
 
 import electroImage from '../assets/img/electro.avif';
 import logoImage from '../assets/img/logo2.jpg';
 
-// 🌟 AJUSTE 1: Agrega "{ onLoginSuccess }" aquí adentro de los paréntesis
-function Login({ onLoginSuccess }) {
+function InicioSesion({ onLoginSuccess }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -17,26 +17,10 @@ function Login({ onLoginSuccess }) {
         setError(null);
 
         try {
-            const response = await fetch('https://dummyjson.com/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    username: username,
-                    password: password,
-                })
-            });
+            const data = await login(username, password);
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Credenciales incorrectas');
-            }
-
-            // Registro silencioso en consola para desarrollo
             console.log("Login exitoso. Datos de usuario:", data);
 
-            // 🌟 AJUSTE 2: Ejecuta la función de éxito pasándole los datos del usuario.
-            // Esto cambiará de golpe el estado en App.jsx para mostrar el catálogo.
             if (onLoginSuccess) {
                 onLoginSuccess(data);
             }
@@ -95,7 +79,7 @@ function Login({ onLoginSuccess }) {
                             </div>
                         </div>
 
-                        {error && <p className="error-message">⚠️ {error}</p>}
+                        {error && <p className="error-message"> {error}</p>}
 
                         <button type="submit" className="login-button" disabled={loading}>
                             {loading ? 'Validando...' : 'Iniciar Sesión'}
@@ -111,4 +95,4 @@ function Login({ onLoginSuccess }) {
     );
 }
 
-export default Login;
+export default InicioSesion;

@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Sidebar from "./components/sidebar";
-import Navbar from "./components/navbar";
-import ContenidoInterfaz from "./components/contenidoInterfaz";
-import Login from './components/Login';
-import Inicio from './components/Inicio';
-import Configuracion from './components/Configuracion';
+import BarraLateral from "./components/BarraLateral";
+import BarraNavegacion from "./components/BarraNavegacion";
+import Catalogo from "./pages/Catalogo";
+import InicioSesion from './pages/InicioSesion';
+import Inicio from './pages/Inicio';
+import Configuracion from './pages/Configuracion';
 import './App.css';
 
 function App() {
@@ -14,18 +14,18 @@ function App() {
   return (
     <div className="App">
       {!user ? (
-        <Login onLoginSuccess={(userData) => setUser(userData)} />
+        <InicioSesion onLoginSuccess={(userData) => setUser(userData)} />
       ) : (
         <>
           <div className="side">
-            <Sidebar currentView={currentView} setCurrentView={setCurrentView} onLogout={() => setUser(null)} />
+            <BarraLateral currentView={currentView} setCurrentView={setCurrentView} />
           </div>
           <div className="navbar">
-            <Navbar user={user} />
+            <BarraNavegacion user={user} onLogout={() => setUser(null)} />
           </div>
           <div className="contenido">
             {currentView === 'inicio' && <Inicio user={user} />}
-            {currentView === 'catalogo' && <ContenidoInterfaz />}
+            {currentView === 'catalogo' && <Catalogo />}
             {currentView === 'configuracion' && <Configuracion />}
           </div>
         </>

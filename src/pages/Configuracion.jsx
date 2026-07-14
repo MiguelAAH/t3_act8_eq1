@@ -8,9 +8,7 @@ function Configuracion() {
             <p className="config-subtitulo">Administra tu perfil, notificaciones y metodos de pago</p>
 
             <div className="config-grid">
-                {/* Columna Izquierda */}
                 <div className="config-columna">
-                    {/* Tarjeta Perfil */}
                     <div className="tarjeta-config">
                         <h3>Perfil del usuario</h3>
                         <div className="form-group-config">

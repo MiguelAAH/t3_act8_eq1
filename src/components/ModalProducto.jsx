@@ -1,17 +1,17 @@
 import React from "react";
 
-function ModalProducto({ isEditing, formValues, setFormValues, handleFormSubmit, setIsModalOpen }) {
+function ModalProducto({ editando, valoresFormulario, setValoresFormulario, manejarEnvioFormulario, setModalAbierto }) {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h2>{isEditing ? "Editar Producto" : "Nuevo Producto"}</h2>
-                <form onSubmit={handleFormSubmit}>
+                <h2>{editando ? "Editar Producto" : "Nuevo Producto"}</h2>
+                <form onSubmit={manejarEnvioFormulario}>
                     <div className="form-group-modal">
                         <label>Título del producto</label>
                         <input
                             type="text"
-                            value={formValues.title}
-                            onChange={(e) => setFormValues({ ...formValues, title: e.target.value })}
+                            value={valoresFormulario.title}
+                            onChange={(e) => setValoresFormulario({ ...valoresFormulario, title: e.target.value })}
                             required
                         />
                     </div>
@@ -22,16 +22,16 @@ function ModalProducto({ isEditing, formValues, setFormValues, handleFormSubmit,
                             <input
                                 type="number"
                                 step="0.01"
-                                value={formValues.price}
-                                onChange={(e) => setFormValues({ ...formValues, price: e.target.value })}
+                                value={valoresFormulario.price}
+                                onChange={(e) => setValoresFormulario({ ...valoresFormulario, price: e.target.value })}
                                 required
                             />
                         </div>
                         <div style={{ flex: 1 }}>
                             <label>Categoría</label>
                             <select
-                                value={formValues.category}
-                                onChange={(e) => setFormValues({ ...formValues, category: e.target.value })}
+                                value={valoresFormulario.category}
+                                onChange={(e) => setValoresFormulario({ ...valoresFormulario, category: e.target.value })}
                                 required
                             >
                                 <option value="men's clothing">men's clothing</option>
@@ -46,17 +46,17 @@ function ModalProducto({ isEditing, formValues, setFormValues, handleFormSubmit,
                         <label>Descripción</label>
                         <textarea
                             rows="3"
-                            value={formValues.description}
-                            onChange={(e) => setFormValues({ ...formValues, description: e.target.value })}
+                            value={valoresFormulario.description}
+                            onChange={(e) => setValoresFormulario({ ...valoresFormulario, description: e.target.value })}
                         />
                     </div>
 
                     <div className="modal-actions">
-                        <button type="button" className="btn-cancelar" onClick={() => setIsModalOpen(false)}>
+                        <button type="button" className="btn-cancelar" onClick={() => setModalAbierto(false)}>
                             Cancelar
                         </button>
                         <button type="submit" className="btn-guardar">
-                            {isEditing ? "Guardar cambios" : "Agregar"}
+                            {editando ? "Guardar cambios" : "Agregar"}
                         </button>
                     </div>
                 </form>

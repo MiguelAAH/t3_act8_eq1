@@ -1,23 +1,23 @@
 import React from "react";
 
-function Filtros({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, categories, setCurrentPage }) {
+function Filtros({ terminoBusqueda, setTerminoBusqueda, categoriaSeleccionada, setCategoriaSeleccionada, categorias, setPaginaActual }) {
     return (
         <div className="panelFiltros">
             <input
                 className="inputFiltro"
                 type="text"
                 placeholder="Buscar Producto..."
-                value={searchTerm}
-                onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
+                value={terminoBusqueda}
+                onChange={(e) => { setTerminoBusqueda(e.target.value); setPaginaActual(1); }}
             />
 
             <select
                 className="inputFiltro"
-                value={selectedCategory}
-                onChange={(e) => { setSelectedCategory(e.target.value); setCurrentPage(1); }}
+                value={categoriaSeleccionada}
+                onChange={(e) => { setCategoriaSeleccionada(e.target.value); setPaginaActual(1); }}
             >
                 <option value="">Todas las categorías</option>
-                {categories.map((cat) => (
+                {categorias.map((cat) => (
                     <option key={cat} value={cat}>{cat}</option>
                 ))}
             </select>
