@@ -1,0 +1,157 @@
+.panelConfiguracion {
+    padding: 40px;
+    background-color: transparent;
+    min-height: 85vh;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.config-titulo {
+    color: #1a2d52;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.config-subtitulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.config-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.config-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+    max-width: 450px;
+}
+
+.tarjeta-config {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-config h3 {
+    margin: 0 0 20px 0;
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.form-group-config {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group-config label {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.form-group-config input {
+    padding: 12px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    background-color: #dbdbdb;
+    color: #555555;
+    font-size: 1rem;
+    cursor: not-allowed;
+}
+
+.btn-config-naranja {
+    width: 100%;
+    background-color: #e29363;
+    /* Color coral/naranja de tus botones */
+    color: #000000;
+    border: 1px solid #b5744a;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.tarjeta-visa-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.icono-tarjeta-simulado {
+    font-size: 1.8rem;
+}
+
+/* Switches de notificación simulados */
+.switch-group-config {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.switch-group-config p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #000000;
+    max-width: 75%;
+}
+
+.switch-simulado {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch-simulado input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: .3s;
+}
+
+.slider-switch:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.slider-switch.checked {
+    background-color: #32ba24;
+    /* Verde activo de tu captura */
+}
+
+.slider-switch.checked:before {
+    transform: translateX(22px);
+}

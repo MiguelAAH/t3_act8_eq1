@@ -4,7 +4,7 @@ import './Login.css';
 import electroImage from '../assets/img/electro.avif';
 import logoImage from '../assets/img/logo2.jpg';
 
-
+// 🌟 AJUSTE 1: Agrega "{ onLoginSuccess }" aquí adentro de los paréntesis
 function Login({ onLoginSuccess }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -32,18 +32,17 @@ function Login({ onLoginSuccess }) {
                 throw new Error(data.message || 'Credenciales incorrectas');
             }
 
-            // 🚀 LOGIN EXITOSO: Mostramos una alerta con los datos recibidos y limpiamos el formulario
-            alert(`¡Login Exitoso en la API!\nBienvenido de vuelta: ${data.firstName} ${data.lastName}\nToken JWT generado correctamente.`);
-            console.log("Respuesta completa de DummyJSON:", data);
+            // Registro silencioso en consola para desarrollo
+            console.log("Login exitoso. Datos de usuario:", data);
 
-            // Limpiamos los campos
-            setUsername('');
-            setPassword('');
-
-            // Llamamos al callback de éxito si existe
+            // 🌟 AJUSTE 2: Ejecuta la función de éxito pasándole los datos del usuario.
+            // Esto cambiará de golpe el estado en App.jsx para mostrar el catálogo.
             if (onLoginSuccess) {
                 onLoginSuccess(data);
             }
+
+            setUsername('');
+            setPassword('');
 
         } catch (err) {
             setError(err.message);
@@ -54,25 +53,19 @@ function Login({ onLoginSuccess }) {
 
     return (
         <div className="login-container">
-            {/* Sección izquierda con la imagen de fondo */}
             <div
                 className="login-left"
                 style={{ backgroundImage: `url(${electroImage})` }}
             ></div>
-
-            {/* Sección derecha con el formulario */}
             <div className="login-right">
                 <div className="login-form-content">
-                    {/* Logo Tewiin */}
                     <div className="logo-container">
                         <img src={logoImage} alt="Logo Tewiin" className="tewiin-logo" />
                     </div>
 
                     <h1 className="login-title">Iniciar Sesión</h1>
 
-                    {/* Formulario de Login */}
                     <form className="login-form" onSubmit={handleSubmit}>
-                        {/* Campo Usuario */}
                         <div className="form-group">
                             <label htmlFor="username">Nombre de Usuario</label>
                             <input
@@ -85,7 +78,6 @@ function Login({ onLoginSuccess }) {
                             />
                         </div>
 
-                        {/* Campo Contraseña */}
                         <div className="form-group">
                             <div className="password-header">
                                 <label htmlFor="password">Contraseña</label>
@@ -103,16 +95,13 @@ function Login({ onLoginSuccess }) {
                             </div>
                         </div>
 
-                        {/* Alerta de Error si las credenciales fallan */}
                         {error && <p className="error-message">⚠️ {error}</p>}
 
-                        {/* Botón Iniciar Sesión */}
                         <button type="submit" className="login-button" disabled={loading}>
                             {loading ? 'Validando...' : 'Iniciar Sesión'}
                         </button>
                     </form>
 
-                    {/* Enlace para registrarse */}
                     <p className="register-text">
                         ¿Todavia no tienes una cuenta? <a href="#" className="register-link">Cree una ahora</a>
                     </p>

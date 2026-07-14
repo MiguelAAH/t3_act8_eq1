@@ -3,10 +3,13 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import ContenidoInterfaz from "./components/contenidoInterfaz";
 import Login from './components/Login';
+import Inicio from './components/Inicio';
+import Configuracion from './components/Configuracion';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
+  const [currentView, setCurrentView] = useState('inicio');
 
   return (
     <div className="App">
@@ -15,13 +18,15 @@ function App() {
       ) : (
         <>
           <div className="side">
-            <Sidebar />
+            <Sidebar currentView={currentView} setCurrentView={setCurrentView} onLogout={() => setUser(null)} />
           </div>
           <div className="navbar">
-            <Navbar />
+            <Navbar user={user} />
           </div>
           <div className="contenido">
-            <ContenidoInterfaz />
+            {currentView === 'inicio' && <Inicio user={user} />}
+            {currentView === 'catalogo' && <ContenidoInterfaz />}
+            {currentView === 'configuracion' && <Configuracion />}
           </div>
         </>
       )}

@@ -26,7 +26,69 @@
     height: auto;
     object-fit: contain;
     margin-right: 0;
-    /* Quita el margen derecho por defecto */
+}
+
+/* === NUEVO: Logo === */
+.sidebar .sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.sidebar .sidebar-logo img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 0;
+}
+
+/* === NUEVO: Contenedor de opciones === */
+.sidebar .sidebar-options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    flex: 1;
+}
+
+/* === NUEVO: Logout al fondo === */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .sidebar-logout {
+    margin-top: auto;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .sidebar-logout button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    color: #ffffff;
+    padding-left: 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-family: inherit;
+}
+
+.sidebar .sidebar-logout button:hover {
+    background: #c0392b;
+    border-color: transparent;
 }
 
 .sidebar ul a,
@@ -69,6 +131,46 @@
 .sidebar ul a.active img {
     filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(2206%) hue-rotate(201deg) brightness(92%) contrast(97%);
     transform: scale(1.05);
+}
+
+/* === NUEVO: Botones de navegación (div + button) === */
+.sidebar .sidebar-options button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    color: #ffffff;
+    padding-left: 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+}
+
+.sidebar .sidebar-options button:hover {
+    background: #e09067;
+    color: #0d1e3d;
+}
+
+.sidebar .sidebar-options button:hover img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(2206%) hue-rotate(201deg) brightness(92%) contrast(97%);
+    transform: scale(1.05);
+}
+
+.sidebar .sidebar-options button.active {
+    background: #ff7c43;
+    color: #0d1e3d;
+}
+
+.sidebar .sidebar-options button.active img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(2206%) hue-rotate(201deg) brightness(92%) contrast(97%);
 }
 
 #check {
