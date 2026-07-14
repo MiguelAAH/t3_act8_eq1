@@ -155,3 +155,39 @@
 .slider-switch.checked:before {
     transform: translateX(22px);
 }
+
+/* ===================================================
+   RESPONSIVE — MÓVIL (≤ 768px)
+   =================================================== */
+@media (max-width: 768px) {
+
+    .panelConfiguracion {
+        padding: 20px 16px;
+    }
+
+    .config-titulo {
+        font-size: 1.7rem;
+    }
+
+    .config-grid {
+        flex-direction: column;
+    }
+
+    .config-columna {
+        max-width: 100%;
+    }
+}
+
+/* ===================================================
+   RESPONSIVE — TABLET (769px – 1024px)
+   =================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .panelConfiguracion {
+        padding: 30px 24px;
+    }
+
+    .config-columna {
+        max-width: 100%;
+    }
+}

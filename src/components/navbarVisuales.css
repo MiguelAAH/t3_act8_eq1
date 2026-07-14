@@ -97,3 +97,31 @@
     color: #ef4444;
     transform: translateX(4px);
 }
+
+/* ===================================================
+   RESPONSIVE NAVBAR — MÓVIL (≤ 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 12px 0 60px;
+        /* espacio a la izquierda para el hamburguesa */
+        justify-content: flex-end;
+    }
+
+    #nombreUsuario {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dropdown-content {
+        width: 160px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 0 20px;
+    }
+}

@@ -1,5 +1,60 @@
 /*VISUALES PARA EL SIDEBAR*/
 
+/* ===== BOTÓN HAMBURGUESA (solo móvil) ===== */
+.sidebar-hamburger {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: #0B2351;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.sidebar-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.sidebar-hamburger:hover {
+    background: #ff7c43;
+}
+
+/* ===== OVERLAY (fondo oscuro al abrir en móvil) ===== */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 999;
+    animation: fadeOverlay 0.25s ease;
+}
+
+@keyframes fadeOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .sidebar {
     position: fixed;
     background: linear-gradient(180deg, #0B2351 0%, #0B2351 100%);
@@ -28,7 +83,6 @@
     margin-right: 0;
 }
 
-/* === NUEVO: Logo === */
 .sidebar .sidebar-logo {
     display: flex;
     justify-content: center;
@@ -44,7 +98,6 @@
     margin-right: 0;
 }
 
-/* === NUEVO: Contenedor de opciones === */
 .sidebar .sidebar-options {
     display: flex;
     flex-direction: column;
@@ -53,7 +106,6 @@
     flex: 1;
 }
 
-/* === NUEVO: Logout al fondo === */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -82,7 +134,7 @@
     cursor: pointer;
     font-weight: 600;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     font-family: inherit;
 }
 
@@ -125,7 +177,6 @@
     transition: all 0.3s ease;
 }
 
-/* Cuando se pasa el mouse, el icono pasa a ser oscuro */
 .sidebar ul a:hover img,
 .sidebar ul .menu-btn:hover img,
 .sidebar ul a.active img {
@@ -133,7 +184,6 @@
     transform: scale(1.05);
 }
 
-/* === NUEVO: Botones de navegación (div + button) === */
 .sidebar .sidebar-options button {
     display: flex;
     align-items: center;
@@ -284,4 +334,38 @@ label #time {
 
 .toggle-submenu:checked~.menu-btn .flecha {
     transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+
+    .sidebar-hamburger {
+        display: flex;
+    }
+
+    .sidebar-overlay {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 230px;
+        z-index: 1000;
+        box-shadow: none;
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+        box-shadow: 6px 0 30px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .sidebar .sidebar-options button span {
+        font-size: 13px;
+    }
 }

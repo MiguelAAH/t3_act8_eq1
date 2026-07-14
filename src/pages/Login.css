@@ -91,6 +91,17 @@
     transition: border-color 0.2s;
 }
 
+/* Extra padding para el input de contraseña con el botón ojo */
+.password-input-wrapper input {
+    padding-right: 44px;
+}
+
+/* Ocultar el botón de ojo nativo de Edge/IE en inputs type=password */
+.password-input-wrapper input::-ms-reveal,
+.password-input-wrapper input::-ms-clear {
+    display: none;
+}
+
 .form-group input::placeholder {
     color: #777777;
 }
@@ -124,12 +135,25 @@
 
 .password-toggle {
     position: absolute;
-    right: 16px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
-    color: #333333;
-    font-size: 0.85rem;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    line-height: 0;
+}
+
+.password-toggle:hover {
+    color: #f27443;
+    background-color: rgba(242, 116, 67, 0.08);
 }
 
 .login-button {

@@ -44,3 +44,46 @@
     color: #333333;
     font-size: 1.5rem;
 }
+
+/* ===================================================
+   RESPONSIVE — MÓVIL (≤ 768px)
+   =================================================== */
+@media (max-width: 768px) {
+
+    .panelInicio {
+        padding: 20px 16px;
+    }
+
+    .bienvenida-titulo {
+        font-size: 1.7rem;
+    }
+
+    .fecha-resumen {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .contenedor-tarjetas {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .tarjeta-resumen {
+        width: 100%;
+    }
+}
+
+/* ===================================================
+   RESPONSIVE — TABLET (769px – 1024px)
+   =================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .contenedor-tarjetas {
+        flex-wrap: wrap;
+    }
+
+    .tarjeta-resumen {
+        width: calc(50% - 14px);
+        flex-shrink: 0;
+    }
+}
