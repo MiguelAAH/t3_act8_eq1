@@ -1,43 +1,8 @@
 /*VISUALES PARA EL SIDEBAR*/
 
-/* ===== BOTÓN HAMBURGUESA (solo móvil) ===== */
-.sidebar-hamburger {
-    display: none;
-    position: fixed;
-    top: 12px;
-    left: 12px;
-    z-index: 1100;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    background: #0B2351;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
-}
 
-.sidebar-hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: #ffffff;
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-.sidebar-hamburger:hover {
-    background: #ff7c43;
-}
-
-/* ===== OVERLAY (fondo oscuro al abrir en móvil) ===== */
+/* ===== OVERLAY ===== */
 .sidebar-overlay {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
@@ -64,8 +29,14 @@
     transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     padding-top: 20px;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
-    z-index: 998;
+    z-index: 1000;
+    transform: translateX(-100%);
+    box-shadow: none;
+}
+
+.sidebar.sidebar-open {
+    transform: translateX(0);
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.25);
 }
 
 .sidebar .brand-logo {
@@ -337,25 +308,8 @@ label #time {
 }
 
 @media (max-width: 768px) {
-
-    .sidebar-hamburger {
-        display: flex;
-    }
-
-    .sidebar-overlay {
-        display: block;
-    }
-
     .sidebar {
-        transform: translateX(-100%);
         width: 230px;
-        z-index: 1000;
-        box-shadow: none;
-    }
-
-    .sidebar.sidebar-open {
-        transform: translateX(0);
-        box-shadow: 6px 0 30px rgba(0, 0, 0, 0.25);
     }
 }
 

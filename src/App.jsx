@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(null);
   const [currentView, setCurrentView] = useState('inicio');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="App">
@@ -18,10 +19,10 @@ function App() {
       ) : (
         <>
           <div className="side">
-            <BarraLateral currentView={currentView} setCurrentView={setCurrentView} />
+            <BarraLateral currentView={currentView} setCurrentView={setCurrentView} abierto={sidebarOpen} setAbierto={setSidebarOpen} />
           </div>
           <div className="navbar">
-            <BarraNavegacion user={user} onLogout={() => setUser(null)} />
+            <BarraNavegacion user={user} onLogout={() => setUser(null)} alternarSidebar={() => setSidebarOpen(!sidebarOpen)} />
           </div>
           <div className="contenido">
             {currentView === 'inicio' && <Inicio user={user} />}

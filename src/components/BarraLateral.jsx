@@ -5,8 +5,7 @@ import casaIcon from "../assets/img/casa.png";
 import bolsaIcon from "../assets/img/bolsa.png";
 import ajustesIcon from "../assets/img/ajustes.png";
 
-function BarraLateral({ currentView, setCurrentView }) {
-    const [abierto, setAbierto] = useState(false);
+function BarraLateral({ currentView, setCurrentView, abierto, setAbierto }) {
 
     const handleNav = (view) => {
         setCurrentView(view);
@@ -15,16 +14,6 @@ function BarraLateral({ currentView, setCurrentView }) {
 
     return (
         <>
-
-            <button
-                className="sidebar-hamburger"
-                onClick={() => setAbierto(!abierto)}
-                aria-label="Abrir menú"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
 
             {abierto && (
                 <div className="sidebar-overlay" onClick={() => setAbierto(false)} />

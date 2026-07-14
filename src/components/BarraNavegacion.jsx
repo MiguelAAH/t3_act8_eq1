@@ -3,7 +3,7 @@ import "./navbarVisuales.css";
 import usuarioIcon from "../assets/img/usuario.png";
 import flechaAbajoIcon from "../assets/img/flecha-abajo.png";
 
-function BarraNavegacion({ user, onLogout }) {
+function BarraNavegacion({ user, onLogout, alternarSidebar }) {
     const [menuAbierto, setMenuAbierto] = useState(false);
 
     const alternarMenu = () => {
@@ -12,6 +12,15 @@ function BarraNavegacion({ user, onLogout }) {
 
     return (
         <div className="navbar">
+            <button
+                className="sidebar-hamburger"
+                onClick={alternarSidebar}
+                aria-label="Abrir menú"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div className="user-menu-container">
                 <button className="user-btn" id="botonUsuario" onClick={alternarMenu}>
                     <img className="nav-user-icon" src={user?.image || usuarioIcon} alt="user" />

@@ -29,7 +29,7 @@ a {
 
 /* Espacio para que el contenido no quede oculto bajo el Sidebar y Navbar fijos */
 .contenido {
-  margin-left: 230px; /* Ancho del sidebar expandido */
+  margin-left: 0;
   padding-top: 60px; /* Alto del navbar */
   min-height: 100vh;
 }
@@ -43,9 +43,6 @@ a {
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .contenido {
-    margin-left: 180px;
-  }
 }
 
 @media (max-width: 768px) {
