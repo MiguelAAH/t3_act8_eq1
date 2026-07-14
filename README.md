@@ -1,16 +1,15 @@
-# React + Vite
+# Proyecto T3 Actividad 8 Equipo 1: Consumo de APIs de Terceros - Login y Sistema con Tabla CRUD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Integrantes del Equipo
+1. Rodriguez Juarez Jose Daniel
+2. Alonso Heredia Miguel Alberto
 
-Currently, two official plugins are available:
+## API Utilizadas
+- **API para la tabla de datos:** [FakeStoreAPI](https://fakestoreapi.com/)
+- **Descripción:** FakeStoreAPI es una API REST gratuita  que proporciona datos simulados para aplicaciones de comercio electrónico (e-commerce). Permite obtener información sobre productos, con atributos como id, título, precio, categoría, descripción e imagen, usuarios y carritos de compra. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **API para el login:** [DummyJSON](https://dummyjson.com/)
+- **Descripción:** DummyJSON es una API que provee una amplia variedad de datos simulados en formato JSON, como productos, recetas, usuarios y publicaciones. Es excelente como un backend de prueba rápido durante el desarrollo frontend, permitiendo simular solicitudes y respuestas reales sin tener que implementar una base de datos.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Despliegue
+- **Enlace al proyecto:** http://66.179.80.246/t3_act8_eq01
